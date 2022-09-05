@@ -8,7 +8,10 @@ let mobile = [
                 ]
 // Using Spread Operator
       var Array = [...mobile]      
-      document.write(`<h1 value${Array}> ${Array[3]} </h1>`)
+      document.write(`<h1 value${Array}> ${Array[0][1]} <br>
+      ${Array[1][1]} <br>
+      ${Array[2][1]} <br>
+      ${Array[3][1]}  </h1>`)
 
 // Object Spread Operator
       
@@ -66,7 +69,7 @@ let mobile = [
             },
             x12: {
                 Ram: '4GB',
-                Rom: "32GB",
+                Rom: '32GB',
                 Price: "50,000",
             }
         }
@@ -76,32 +79,47 @@ let mobile = [
     let mobileSpreadOperator = {...mobiles}
 
     
-    let keys = Object.keys(mobileSpreadOperator);
+    let mobileNameToDisplay = Object.keys(mobileSpreadOperator);
+   
+    document.write(`<h1 value${mobileNameToDisplay}> ${mobileNameToDisplay[2]} </h1>`)
+
+    let modelNameTODisplay = Object.keys(mobileSpreadOperator.Xiomi.x12)
+
+    document.write(`<h1 value${modelNameTODisplay}> ${modelNameTODisplay} </h1>`)
+
     
-    functionToDisplay(keys, "mobileName")
+    let valueNameTODisplay = Object.values(mobileSpreadOperator.Xiomi.x12)
+    console.log(valueNameTODisplay)
+
+    document.write(`<h1 value${valueNameTODisplay}> ${valueNameTODisplay} </h1>`)
+
+
+
+
+    // functionToDisplay(keys, "mobileName")
     
-    function functionToDisplay(mobileData, idMobileName) {
-        let mobileToShow = "";
-        for (let i=0; i < mobileData.length; i++) {
-        let mobileNametoDiplay = mobileData[2];
-        mobileToShow += `<option value="${mobileNametoDiplay}"> ${mobileNametoDiplay} </Option>`;     
-    }
-       document.getElementById(idMobileName).innerHTML = mobileToShow;
-    }
-    function functionClickTo() {
-        // mobileName.disabled = false;
-        mobileModel = document.getElementById("mobileModel");
-        let dataToShow = Object.keys(mobiles[mobileName.value]);
-        functionToDisplay(dataToShow, "mobileModel");
-      }
-    function onValue() {
-        let resultToDisplayName = Object.keys(mobiles[mobileName.value][mobileModel.value])
-        let resultToDisplayModel = Object.values(mobiles[mobileName.value][mobileModel.value])
-        document.getElementById("demo").innerHTML = resultToDisplayName[0];
-        document.getElementById("demo1").innerHTML = resultToDisplayModel[0];
-        document.getElementById("demo2").innerHTML = resultToDisplayName[1];
-        document.getElementById("demo3").innerHTML = resultToDisplayModel[1];
-        document.getElementById("demo4").innerHTML = resultToDisplayName[2];
-        document.getElementById("demo5").innerHTML = resultToDisplayModel[2];
-    }
+    // function functionToDisplay(mobileData, idMobileName) {
+    //     let mobileToShow = "";
+    //     for (let i=0; i < mobileData.length; i++) {
+    //     let mobileNametoDiplay = mobileData[2];
+    //     mobileToShow += `<option value="${mobileNametoDiplay}"> ${mobileNametoDiplay} </Option>`;     
+    // }
+    //    document.getElementById(idMobileName).innerHTML = mobileToShow;
+    // }
+    // function functionClickTo() {
+    //     // mobileName.disabled = false;
+    //     mobileModel = document.getElementById("mobileModel");
+    //     let dataToShow = Object.keys(mobiles[mobileName.value]);
+    //     functionToDisplay(dataToShow, "mobileModel");
+    //   }
+    // function onValue() {
+    //     let resultToDisplayName = Object.keys(mobiles[mobileName.value][mobileModel.value])
+    //     let resultToDisplayModel = Object.values(mobiles[mobileName.value][mobileModel.value])
+    //     document.getElementById("demo").innerHTML = resultToDisplayName[0];
+    //     document.getElementById("demo1").innerHTML = resultToDisplayModel[0];
+    //     document.getElementById("demo2").innerHTML = resultToDisplayName[1];
+    //     document.getElementById("demo3").innerHTML = resultToDisplayModel[1];
+    //     document.getElementById("demo4").innerHTML = resultToDisplayName[2];
+    //     document.getElementById("demo5").innerHTML = resultToDisplayModel[2];
+    // }
     
